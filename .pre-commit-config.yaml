@@ -8,3 +8,14 @@ repos:
     -   id: end-of-file-fixer
     -   id: check-yaml
     -   id: check-added-large-files
+    -   id: check-json
+    -   id: check-executables-have-shebangs
+    -   id: check-merge-conflict
+    -   id: check-symlinks
+    -   id: detect-private-key
+    -   id: mixed-line-ending
+        args: ["--fix=no"]
+-   repo: https://github.com/jlebar/pre-commit-hooks.git
+    rev: 62ca83b
+    hooks:
+    -   id: do-not-submit
