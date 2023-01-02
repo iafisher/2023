@@ -1,0 +1,18 @@
+# General
+*.swp
+*.o
+*.so
+*.save
+*~
+.DS_Store
+*.sqlite3
+
+# Python
+*.pyo
+*.pyc
+__pycache__
+.mypy_cache
+.venv
+
+# JavaScript
+node_modules
