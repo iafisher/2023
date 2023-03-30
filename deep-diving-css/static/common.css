@@ -12,3 +12,8 @@
    */
   box-sizing: border-box;
 }
+
+.site-title {
+  font-size: 1.5rem;
+  margin-right: 20px;
+}

@@ -1,0 +1,77 @@
+:root {
+  --horizontal-padding: 20px;
+  --vertical-padding: 40px;
+}
+
+html, body, .wrapper {
+  /**
+   * Set the height of html, body and the wrapper to the height of the viewport.
+   */
+  height: 100%;
+}
+
+.wrapper {
+  /**
+   * Use a column Flexbox layout for the wrapper.
+   *
+   * It will consist of three elements arranged vertically: the header, the main content, and the
+   * footer.
+   */
+  display: flex;
+  flex-direction: column;
+}
+
+nav, footer {
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  /* Cosmetic styling */
+  font-size: 1.1rem;
+  padding: var(--horizontal-padding) var(--vertical-padding);
+  background-color: var(--main-background-color);
+}
+
+nav {
+  /* Cosmetic styling */
+  border-bottom: 1px solid var(--main-border-color);
+}
+
+footer {
+  /* Cosmetic styling */
+  border-top: 1px solid var(--main-border-color);
+}
+
+main {
+  /**
+   * Since the header and footer set `flex-grow` to 0, this ensures that the main content will take
+   * up as much of the screen's height as possible.
+   */
+  flex-grow: 1;
+
+  /* Cosmetic styling */
+  padding: var(--horizontal-padding) var(--vertical-padding);
+  max-width: 70rem;
+}
+
+h1 {
+  /**
+   * We already set padding on the main element, so we don't need an extra top margin.
+   */
+  margin-top: 0;
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+pre {
+  /**
+   * If the content is too wide for the screen, show a scrollbar.
+   */
+  overflow-x: scroll;
+
+  /* Cosmetic styling */
+  background-color: var(--main-background-color);
+  padding: 10px;
+  border: 1px solid var(--main-border-color);
+}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='header_footer.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="wrapper">
+  <nav>
+    <a class="site-title" href="/">Deep Diving CSS</a>
+    This is a <strong>header</strong>. It stays at the top of the page and disappears from view if scrolled.
+  </nav>
+
+  <main>
+    <h1>header-footer</h1>
+    <p>A simple layout with a header and a footer.</p>
+
+    <h2>CSS</h2>
+    <pre><code>{% include 'css/header_footer.css' %}</code></pre>
+  </main>
+
+  <footer>
+    This is a <strong>footer</strong>. It stays at the bottom of the page, below all the content.
+  </footer>
+</div>
+{% endblock %}
