@@ -1,0 +1,62 @@
+{#
+ # Use modern HTML/CSS specifications instead of "quirks mode".[^1][^2]
+ #
+ # [^1]: https://developer.mozilla.org/en-US/docs/Glossary/Doctype
+ # [^2]: https://developer.mozilla.org/en-US/docs/Web/HTML/Quirks_Mode_and_Standards_Mode
+ #}
+<!DOCTYPE html>
+
+<html>
+  <head>
+    {#
+     # Declare the character encoding of the document as UTF-8.
+     #
+     # Whether this declaration is necessary or not is the subject of conflicting opinions. A 2013
+     # Stack Overflow answer[^1] states that it is not necessary, but also notes that it *will* be
+     # used as a fallback if the web server doesn't include a Content-Type header in the HTTP
+     # response and the document itself doesn't include a byte-order mark.
+     #
+     # The MDN docs on the <meta> element[^2] note that "UTF-8 is the only valid encoding for HTML5
+     # documents" and thus the `charset` attribute must be `utf-8`, which suggests that including it
+     # is redundant.
+     #
+     # MDN's internal guidelines for writing code examples recommends including <meta charset> as a
+     # best practice.[^3]
+     #
+     # Since it can't hurt, we include it here.
+     #
+     # [^1]: https://stackoverflow.com/a/14669441
+     # [^2]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#charset
+     # [^3]: https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide/HTML
+     #}
+    <meta charset="utf-8">
+
+    {#
+     # Tell mobile browsers that the site is mobile-friendly.[^1]
+     #
+     # Per MDN, devices with small screens (and Chrome Inspector's simulated mobile device view) may
+     # render the page in a larger virtual screen and then shrink it to fit the actual screen. If
+     # the site is designed to be viewed as-is on small screens (for example, by using CSS media
+     # queries), then this is undesirable, so we disable it here.
+     #
+     # Many online examples include `initial-scale=1`, but according to MDN this is the default
+     # value.
+     #
+     # [^1]: https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag
+     #}
+    <meta name="viewport" content="width=device-width" />
+
+    <title>{% block title %}Deep Diving CSS{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='public/normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='common.css') }}">
+
+    {% block head %}
+    {% endblock %}
+  </head>
+
+  <body>
+    {% block body %}
+    {% endblock %}
+  </body>
+</html>

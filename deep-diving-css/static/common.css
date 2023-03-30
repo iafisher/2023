@@ -1,0 +1,14 @@
+:root {
+  --main-border-color: #ccc;
+  --main-background-color: whitesmoke;
+}
+
+* {
+  /**
+   * Calculate the width and height of elements based on its "border box", which includes padding
+   * and border, instead of its "content box".[^1]
+   *
+   * [^1]: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
+   */
+  box-sizing: border-box;
+}

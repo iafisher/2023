@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Deep diving CSS</title>
-    <meta charset="utf8">
+{% extends 'base.html' %}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='public/normalize.css') }}">
-  </head>
-
-  <body>
-    <p>Hello, world!</p>
-  </body>
-</html>
+{% block body %}
+<p>Hello, world!</p>
+{% endblock %}
