@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
 
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+{% endblock %}
+
 {% block body %}
-<p>Hello, world!</p>
+<main>
+  <h1>Deep Diving CSS</h1>
+  <p>
+    <a href="https://github.com/iafisher/2023/tree/master/deep-diving-css">github.com/iafisher/2023/tree/master/deep-diving-css</a>
+  </p>
+</main>
 {% endblock %}
