@@ -51,15 +51,3 @@ h1 {
 p {
   font-size: 1.1rem;
 }
-
-pre {
-  /**
-   * If the content is too wide for the screen, show a scrollbar.
-   */
-  overflow-x: scroll;
-
-  /* Cosmetic styling */
-  background-color: var(--main-background-color);
-  padding: 10px;
-  border: 1px solid var(--main-border-color);
-}

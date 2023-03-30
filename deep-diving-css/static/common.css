@@ -25,3 +25,15 @@
   background-color: var(--main-background-color);
   border-bottom: 1px solid var(--main-border-color);
 }
+
+pre {
+  /**
+   * If the content is too wide for the screen, show a scrollbar.
+   */
+  overflow-x: scroll;
+
+  /* Cosmetic styling */
+  background-color: var(--main-background-color);
+  padding: 10px;
+  border: 1px solid var(--main-border-color);
+}

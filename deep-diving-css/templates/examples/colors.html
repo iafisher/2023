@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='colors.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="wrapper">
+  <nav class="site-nav">
+    <a class="site-title" href="/">Deep Diving CSS</a>
+  </nav>
+
+  <main>
+    <h1>colors</h1>
+
+    <h2>Primary colors</h2>
+    <div class="gallery">
+      {% for color in ['red', 'orange', 'yellow', 'green', 'blue', 'darkblue', 'purple', 'pink'] %}
+      <div class="row">
+        <div class="colorbox" style="background-color: var(--color-{{ color }})"></div>
+        <div class="colorbox" style="background-color: var(--color-dark-{{ color }})"></div>
+        <div class="colorbox" style="background-color: var(--color-light-{{ color }})"></div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <h2>Rainbow</h2>
+    <div class="rainbow">
+      {% for n in range(360) %}
+      <div class="colorbox" style="background-color: hsl({{ n }}deg 100% 50%"></div>
+      {% endfor %}
+
+    </div>
+
+    <h2>CSS</h2>
+    <details open>
+      <summary>Toggle display</summary>
+      {{ highlighted_css | safe }}
+    </details>
+
+    <h2>HTML</h2>
+    <details>
+      <summary>Toggle display</summary>
+      {{ highlighted_html | safe }}
+    </details>
+  </main>
+</div>
+{% endblock %}
