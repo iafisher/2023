@@ -1,0 +1,7 @@
+# To add a new dependency, update this file, then run
+#
+#   pip-compile requirements.in
+#   pip-sync requirements.txt
+#
+
+Flask==2.2
