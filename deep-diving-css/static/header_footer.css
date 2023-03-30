@@ -1,8 +1,3 @@
-:root {
-  --horizontal-padding: 20px;
-  --vertical-padding: 40px;
-}
-
 html, body, .wrapper {
   /**
    * Set the height of html, body and the wrapper to the height of the viewport.
@@ -24,20 +19,13 @@ html, body, .wrapper {
 nav, footer {
   flex-grow: 0;
   flex-shrink: 0;
-
-  /* Cosmetic styling */
-  font-size: 1.1rem;
-  padding: var(--horizontal-padding) var(--vertical-padding);
-  background-color: var(--main-background-color);
-}
-
-nav {
-  /* Cosmetic styling */
-  border-bottom: 1px solid var(--main-border-color);
 }
 
 footer {
   /* Cosmetic styling */
+  font-size: 1.1rem;
+  padding: var(--site-nav-padding);
+  background-color: var(--main-background-color);
   border-top: 1px solid var(--main-border-color);
 }
 
@@ -49,7 +37,7 @@ main {
   flex-grow: 1;
 
   /* Cosmetic styling */
-  padding: var(--horizontal-padding) var(--vertical-padding);
+  padding: var(--site-nav-padding);
   max-width: 70rem;
 }
 

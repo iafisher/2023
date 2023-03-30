@@ -1,4 +1,9 @@
 main {
-  max-width: 40rem;
-  margin: auto;
+  max-width: 60rem;
+  padding: var(--site-nav-padding);
+  font-size: 1.1rem;
+}
+
+main *:first-child {
+  margin-top: 0;
 }

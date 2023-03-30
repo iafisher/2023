@@ -1,6 +1,7 @@
 :root {
   --main-border-color: #ccc;
   --main-background-color: whitesmoke;
+  --site-nav-padding: 20px 40px;
 }
 
 * {
@@ -16,4 +17,11 @@
 .site-title {
   font-size: 1.5rem;
   margin-right: 20px;
+}
+
+.site-nav {
+  font-size: 1.1rem;
+  padding: var(--site-nav-padding);
+  background-color: var(--main-background-color);
+  border-bottom: 1px solid var(--main-border-color);
 }

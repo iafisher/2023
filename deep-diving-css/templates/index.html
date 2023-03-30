@@ -5,14 +5,19 @@
 {% endblock %}
 
 {% block body %}
+<nav class="site-nav">
+  <a class="site-title" href="/">Deep Diving CSS</a>
+</nav>
+
 <main>
-  <h1>Deep Diving CSS</h1>
   <p>
-    <a href="https://github.com/iafisher/2023/tree/master/deep-diving-css">github.com/iafisher/2023/tree/master/deep-diving-css</a>
+    A deep dive of CSS concepts. See the source code on <a href="https://github.com/iafisher/2023/tree/master/deep-diving-css">GitHub</a>.
   </p>
+
+  <h2>Examples</h2>
   <ul>
     <li>
-      <a href="{{ url_for('example_page', title='header-footer') }}">header-footer</a>
+      <a href="{{ url_for('example_page', title='header-footer') }}">header-footer</a>: A simple header-footer layout.
     </li>
   </ul>
 </main>
