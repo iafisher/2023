@@ -5,3 +5,4 @@
 #
 
 Flask==2.2
+Pygments==2.14

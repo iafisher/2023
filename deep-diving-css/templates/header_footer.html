@@ -15,8 +15,17 @@
     <h1>header-footer</h1>
     <p>A simple layout with a header and a footer.</p>
 
+    <h2>HTML</h2>
+    <details open>
+      <summary>Toggle display</summary>
+      {{ highlighted_html | safe }}
+    </details>
+
     <h2>CSS</h2>
-    <pre><code>{% include 'css/header_footer.css' %}</code></pre>
+    <details open>
+      <summary>Toggle display</summary>
+      {{ highlighted_css | safe }}
+    </details>
   </main>
 
   <footer>
