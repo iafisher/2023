@@ -1,0 +1,52 @@
+#!/bin/bash
+
+set -eu
+
+NETWORK=iafisher-net
+CLIENT_CONTAINER=iafisher-client
+SERVER_CONTAINER=iafisher-server
+
+main() {
+  docker network rm "$NETWORK" || true
+  docker rm "$SERVER_CONTAINER" || true
+  docker rm "$CLIENT_CONTAINER" || true
+
+  echo "*** Creating the Docker network"
+  docker network create "$NETWORK"
+
+  echo
+  echo
+  echo "*** Building the Docker images"
+  docker build -t "$CLIENT_CONTAINER":latest -f Dockerfile.client .
+  docker build -t "$SERVER_CONTAINER":latest -f Dockerfile.server .
+
+  echo
+  echo
+  echo "*** Starting the Docker images"
+  docker run -d --name "$SERVER_CONTAINER" --network "$NETWORK" "$SERVER_CONTAINER":latest
+  docker run -d --name "$CLIENT_CONTAINER" --network "$NETWORK" "$CLIENT_CONTAINER":latest
+
+  echo
+  echo
+  echo "*** Sleeping for a bit"
+  sleep 1
+
+  echo
+  echo
+  echo "*** Client logs"
+  docker logs "$CLIENT_CONTAINER"
+
+  echo
+  echo
+  echo "*** Server logs"
+  docker logs "$SERVER_CONTAINER"
+
+  echo
+  echo
+  echo "*** Cleaning up"
+  docker stop "$CLIENT_CONTAINER" "$SERVER_CONTAINER"
+  docker rm "$CLIENT_CONTAINER" "$SERVER_CONTAINER"
+  docker network rm "$NETWORK"
+}
+
+main "$@"
